@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    padding: 30px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.match-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.match-info input {
+    padding: 10px 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    width: 150px;
+}
+
+.match-info span {
+    font-weight: bold;
+    color: #666;
+}
+
+.current-score {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.score-display h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.score-main {
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.overs {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+.run-rate {
+    text-align: right;
+    font-size: 1.1em;
+}
+
+.run-rate div {
+    margin: 5px 0;
+}
+
+.batsmen-section, .bowler-section {
+    margin-bottom: 25px;
+}
+
+h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #f0f0f0;
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+    color: #555;
+}
+
+td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #eee;
+}
+
+tr.striker {
+    background: #fff3cd;
+}
+
+input[type="text"] {
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.controls {
+    margin: 30px 0;
+}
+
+.run-buttons, .extra-buttons, .action-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.run-buttons button {
+    background: #4CAF50;
+    color: white;
+    flex: 1;
+    min-width: 80px;
+}
+
+.run-buttons button:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+}
+
+.extra-buttons button {
+    background: #FFA726;
+    color: white;
+    flex: 1;
+}
+
+.extra-buttons button:hover {
+    background: #FB8C00;
+}
+
+.wicket-btn {
+    background: #f44336;
+    color: white;
+    flex: 1;
+}
+
+.wicket-btn:hover {
+    background: #da190b;
+}
+
+.end-over-btn {
+    background: #2196F3;
+    color: white;
+    flex: 1;
+}
+
+.switch-innings-btn {
+    background: #9C27B0;
+    color: white;
+    flex: 1;
+}
+
+.reset-btn {
+    background: #607D8B;
+    color: white;
+    flex: 1;
+}
+
+.recent-balls {
+    margin-top: 30px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+}
+
+.balls-display {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.ball {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+}
+
+.ball.run {
+    background: #4CAF50;
+}
+
+.ball.wicket {
+    background: #f44336;
+}
+
+.ball.wide, .ball.noball {
+    background: #FFA726;
+}
+
+.ball.dot {
+    background: #9E9E9E;
+}
+
+.scorecard-full {
+    margin-top: 30px;
+    padding: 20px;
+    background: #f5f5f5;
+    border-radius: 10px;
+}
+
+#fullScorecard {
+    margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .current-score {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .run-rate {
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    .score-main {
+        font-size: 2.5em;
+    }
+    
+    button {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}

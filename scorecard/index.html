@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Scorecard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Cricket Scorecard</h1>
+            <div class="match-info">
+                <input type="text" id="team1Name" placeholder="Team 1 Name" value="Team A">
+                <span>VS</span>
+                <input type="text" id="team2Name" placeholder="Team 2 Name" value="Team B">
+            </div>
+        </header>
+
+        <div class="current-score">
+            <div class="score-display">
+                <h2 id="battingTeam">Team A</h2>
+                <div class="score-main">
+                    <span id="runs">0</span>/<span id="wickets">0</span>
+                </div>
+                <div class="overs">
+                    Overs: <span id="overs">0.0</span>
+                </div>
+            </div>
+            <div class="run-rate">
+                <div>CRR: <span id="currentRR">0.00</span></div>
+                <div>Target: <span id="target">-</span></div>
+            </div>
+        </div>
+
+        <div class="batsmen-section">
+            <h3>Batsmen</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Batsman</th>
+                        <th>Runs</th>
+                        <th>Balls</th>
+                        <th>4s</th>
+                        <th>6s</th>
+                        <th>SR</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="striker">
+                        <td><input type="text" id="striker" placeholder="Striker*"></td>
+                        <td id="strikerRuns">0</td>
+                        <td id="strikerBalls">0</td>
+                        <td id="striker4s">0</td>
+                        <td id="striker6s">0</td>
+                        <td id="strikerSR">0.00</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="nonStriker" placeholder="Non-Striker"></td>
+                        <td id="nonStrikerRuns">0</td>
+                        <td id="nonStrikerBalls">0</td>
+                        <td id="nonStriker4s">0</td>
+                        <td id="nonStriker6s">0</td>
+                        <td id="nonStrikerSR">0.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="bowler-section">
+            <h3>Current Bowler</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Bowler</th>
+                        <th>Overs</th>
+                        <th>Runs</th>
+                        <th>Wickets</th>
+                        <th>Economy</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" id="bowler" placeholder="Bowler Name"></td>
+                        <td id="bowlerOvers">0.0</td>
+                        <td id="bowlerRuns">0</td>
+                        <td id="bowlerWickets">0</td>
+                        <td id="bowlerEconomy">0.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="controls">
+            <div class="run-buttons">
+                <button onclick="addRuns(0)">Dot</button>
+                <button onclick="addRuns(1)">1</button>
+                <button onclick="addRuns(2)">2</button>
+                <button onclick="addRuns(3)">3</button>
+                <button onclick="addRuns(4)">4</button>
+                <button onclick="addRuns(6)">6</button>
+            </div>
+            <div class="extra-buttons">
+                <button onclick="addExtras('wide')">Wide</button>
+                <button onclick="addExtras('noball')">No Ball</button>
+                <button onclick="addExtras('bye')">Bye</button>
+                <button onclick="addExtras('legbye')">Leg Bye</button>
+            </div>
+            <div class="action-buttons">
+                <button onclick="wicket()" class="wicket-btn">Wicket</button>
+                <button onclick="endOver()" class="end-over-btn">End Over</button>
+                <button onclick="switchInnings()" class="switch-innings-btn">Switch Innings</button>
+                <button onclick="resetMatch()" class="reset-btn">Reset Match</button>
+            </div>
+        </div>
+
+        <div class="recent-balls">
+            <h3>This Over</h3>
+            <div id="currentOver" class="balls-display"></div>
+        </div>
+
+        <div class="scorecard-full">
+            <h3>Full Scorecard</h3>
+            <div id="fullScorecard"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
